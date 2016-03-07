@@ -1,0 +1,67 @@
+<Graph Description="" Group="PlayerScript" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="2" Class="Game:Start" pos="-370,-630,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="18" Class="Mission:GameTokenModify" pos="200,-630,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.playerHealth" Operation="2" TokenType="1" OtherValue="1"/>
+  </Node>
+  <Node Id="19" Class="Time:Delay" pos="-50,-630,0" flags="0">
+   <Inputs delay="1" resetOnInput="0"/>
+  </Node>
+  <Node Id="22" Class="Logic:Any" pos="-170,-630,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="24" Class="UI:Canvas:Load" pos="-180,-730,0" flags="0">
+   <Inputs CanvasPathname="F:\Lumberyard\dev\healthui.uicanvas"/>
+  </Node>
+  <Node Id="27" Class="Logic:IfCondition" pos="970,-630,0" flags="0">
+   <Inputs Condition="0"/>
+  </Node>
+  <Node Id="28" Class="Mission:GameTokenGet" pos="550,-630,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.regainingHealth"/>
+  </Node>
+  <Node Id="29" Class="Mission:GameTokenModify" pos="1250,-630,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.playerHealth" Operation="1" TokenType="1" OtherValue="6"/>
+  </Node>
+  <Node Id="31" Class="Debug:Log" pos="380,-470,0" flags="0">
+   <Inputs message=""/>
+  </Node>
+  <Node Id="32" Class="Mission:GameTokenGet" pos="-40,-420,0" flags="1">
+   <Inputs gametoken_Token="Level.Player.playerHealth"/>
+  </Node>
+  <Node Id="33" Class="Math:Clamp" pos="1660,-630,0" flags="0">
+   <Inputs In="0" Min="0" Max="100"/>
+  </Node>
+  <Node Id="34" Class="Mission:GameTokenSet" pos="1870,-630,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.playerHealth" TokenValue=""/>
+  </Node>
+  <Node Id="35" Class="UI:Text:SetText" pos="430,-340,0" flags="0">
+   <Inputs CanvasID="0" ElementID="0" Value=""/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="22" nodeOut="2" portIn="In0" portOut="output" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="2" portIn="Activate" portOut="output" enabled="1"/>
+  <Edge nodeIn="28" nodeOut="18" portIn="Activate" portOut="Result" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="19" portIn="Activate" portOut="out" enabled="1"/>
+  <Edge nodeIn="19" nodeOut="22" portIn="in" portOut="Out" enabled="1"/>
+  <Edge nodeIn="32" nodeOut="22" portIn="Activate" portOut="Out" enabled="1"/>
+  <Edge nodeIn="35" nodeOut="24" portIn="CanvasID" portOut="CanvasID" enabled="1"/>
+  <Edge nodeIn="22" nodeOut="27" portIn="In1" portOut="OnFalse" enabled="1"/>
+  <Edge nodeIn="29" nodeOut="27" portIn="Activate" portOut="OnTrue" enabled="1"/>
+  <Edge nodeIn="27" nodeOut="28" portIn="Activate" portOut="OutValue" enabled="1"/>
+  <Edge nodeIn="27" nodeOut="28" portIn="Condition" portOut="OutValue" enabled="1"/>
+  <Edge nodeIn="33" nodeOut="29" portIn="In" portOut="Result" enabled="1"/>
+  <Edge nodeIn="31" nodeOut="32" portIn="input" portOut="OutValue" enabled="1"/>
+  <Edge nodeIn="31" nodeOut="32" portIn="message" portOut="OutValue" enabled="1"/>
+  <Edge nodeIn="35" nodeOut="32" portIn="Activate" portOut="OutValue" enabled="1"/>
+  <Edge nodeIn="35" nodeOut="32" portIn="Value" portOut="OutValue" enabled="1"/>
+  <Edge nodeIn="34" nodeOut="33" portIn="Activate" portOut="Out" enabled="1"/>
+  <Edge nodeIn="34" nodeOut="33" portIn="TokenValue" portOut="Out" enabled="1"/>
+  <Edge nodeIn="22" nodeOut="34" portIn="In2" portOut="OutValue" enabled="1"/>
+ </Edges>
+ <GraphTokens>
+  <Token Name="health" Type="1"/>
+ </GraphTokens>
+</Graph>

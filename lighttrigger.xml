@@ -1,0 +1,18 @@
+<Graph Description="" Group="lightTrigger" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="2" Class="entity:ProximityTrigger" pos="-300,-159,0" flags="0" GraphEntity="0">
+   <Inputs entityId="0" Disable="0" Enable="0" Enter="0" Leave="0"/>
+  </Node>
+  <Node Id="5" Class="Mission:GameTokenModify" pos="60,-130,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.regainingHealth" Operation="0" TokenType="0" OtherValue="true"/>
+  </Node>
+  <Node Id="7" Class="Mission:GameTokenModify" pos="60,10,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.regainingHealth" Operation="0" TokenType="0" OtherValue="false"/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="5" nodeOut="2" portIn="Activate" portOut="Enter" enabled="1"/>
+  <Edge nodeIn="7" nodeOut="2" portIn="Activate" portOut="Leave" enabled="1"/>
+ </Edges>
+ <GraphTokens />
+</Graph>
