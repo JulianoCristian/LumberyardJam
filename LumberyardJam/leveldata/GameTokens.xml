@@ -1,0 +1,8 @@
+<GameTokens>
+ <GameTokensLibrary>
+  <LevelLibrary Name="Level">
+   <GameToken Name="Player.playerHealth" Type="Int" Value="100" LocalOnly="1"/>
+   <GameToken Name="Player.regainingHealth" Type="Bool" Value="false" LocalOnly="1"/>
+  </LevelLibrary>
+ </GameTokensLibrary>
+</GameTokens>
