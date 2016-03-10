@@ -3,8 +3,8 @@
   <Node Id="2" Class="Game:Start" pos="-370,-630,0" flags="0">
    <Inputs InGame="1" InEditor="1"/>
   </Node>
-  <Node Id="18" Class="Mission:GameTokenModify" pos="200,-630,0" flags="1">
-   <Inputs gametoken_Token="Level.Player.playerHealth" Operation="2" TokenType="1" OtherValue="0"/>
+  <Node Id="18" Class="Mission:GameTokenModify" pos="200,-630,0" flags="0">
+   <Inputs gametoken_Token="Level.Player.playerHealth" Operation="2" TokenType="1" OtherValue="1"/>
   </Node>
   <Node Id="19" Class="Time:Delay" pos="-50,-630,0" flags="0">
    <Inputs delay="0.5" resetOnInput="0"/>
@@ -46,7 +46,7 @@
    <Inputs A="0" B="1"/>
   </Node>
   <Node Id="64" Class="Movement:MoveEntityTo" pos="870,-390,0" flags="0" EntityGUID="{87A95A92-DEB2-4739-AB31-1C238F1AF5ED}" EntityGUID_64="4739DEB287A95A92">
-   <Inputs entityId="0" Destination="1020,413,32" DynamicDestination="0" ValueType="1" Value="0" EaseInDistance="0" EaseOutDistance="0" CoordSys="1"/>
+   <Inputs entityId="0" Destination="25,414,85" DynamicDestination="0" ValueType="1" Value="0.3" EaseInDistance="0" EaseOutDistance="0" CoordSys="1"/>
   </Node>
   <Node Id="70" Class="Mission:GameTokenModify" pos="1650,-410,0" flags="0">
    <Inputs gametoken_Token="Level.Player.playerHealth" Operation="0" TokenType="1" OtherValue="100"/>
@@ -58,7 +58,7 @@
    <Inputs vec3="0,0,0"/>
   </Node>
   <Node Id="73" Class="Math:Less" pos="1440,-180,0" flags="0">
-   <Inputs A="0" B="15"/>
+   <Inputs A="0" B="35"/>
   </Node>
   <Node Id="76" Class="Mission:GameTokenModify" pos="1690,-180,0" flags="0">
    <Inputs gametoken_Token="Level.Player.playerHealth" Operation="0" TokenType="1" OtherValue="0"/>
